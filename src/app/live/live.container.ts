@@ -7,11 +7,11 @@ import { UserService } from './user.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LiveContainer implements OnInit {
-  liveObject = {
-    field1: 'bottom'
-  };
   data: any = {
     prop: 'bottom',
+  };
+  data2: any = {
+    prop: 'bottom'
   };
   firstName: any;
 
@@ -26,19 +26,19 @@ export class LiveContainer implements OnInit {
     });
   }
 
-  onEvent(e) {
-    this.liveObject.field1 = 'top';
+  onEventChild(e) {
+    this.data2.prop = 'top';
   }
 
   changeValue() {
-    this.liveObject.field1 = 'top';
+    this.data2.prop = 'top';
   }
 
   changeObject() {
     this.data = { prop: 'top' };
   }
 
-  changeUser() {
+  changeWithObservable() {
     this.userService.loadUser({ firstName: 'Bob', lastName: 'Smith' });
   }
 }

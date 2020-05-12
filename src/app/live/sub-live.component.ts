@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SubLiveComponent implements OnChanges, OnInit {
-  @Input() liveObject: any;
+  @Input() data2: any;
   @Input() data: any;
   @Input() user: any;
   @Input() firstName: any;
-  @Output() event = new EventEmitter();
+  @Output() eventChild = new EventEmitter();
 
   public dataNested = {
     prop: 'toto'

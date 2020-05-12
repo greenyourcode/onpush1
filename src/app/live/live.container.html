@@ -1,13 +1,13 @@
 <div style="border:1px solid;" class="container">
     <h2>live container!</h2>
-    <span (click)="changeValue()">change</span>
+    <button (click)="changeValue()">Change Value</button>
     <button (click)="changeObject()">Change Object</button>
-    <span>parent liveObject : {{liveObject.field1}}</span>
-    <button (click)="changeUser()">Change User</button>
+    <button (click)="changeWithObservable()">Change with observable</button>
+    <div>data2 : {{data2.prop}}</div>
     <div>
         user parent : {{firstName}}
     </div>
-    <app-sub-live [firstName]="firstName" (event)="onEvent($event)" [liveObject]="liveObject" [data]="data">
+    <app-sub-live [firstName]="firstName" (eventChild)="onEventChild($event)" [data2]="data2" [data]="data">
     </app-sub-live>
-    <app-sub-live2 [liveObject]="liveObject" [data]="data"></app-sub-live2>
+    <app-sub-live2 [data2]="data2" [data]="data"></app-sub-live2>
 </div>

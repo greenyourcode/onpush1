@@ -6,7 +6,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy, OnChanges } from '@a
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SubLive2Component implements OnChanges, OnInit {
-  @Input() liveObject: any;
+  @Input() data2: any;
   @Input() data: any;
 
   constructor() { }

@@ -1,17 +1,11 @@
 <div style="border:1px solid; margin:20px;" class="content">
     <p><u>sub-live content</u></p>
-    liveObject: {{liveObject.field1}}
-    prop: {{data.prop}}<br />
-    <span (click)="changeNested()">change nested</span>
-    <div>
-        <span (click)="event.emit()">emit</span>
-    </div>
-    <div>
-        user : {{user?.firstName}}
-    </div>
-    <div>
-        firstName: {{firstName}}
-    </div>
-    <app-sub-sub-live [liveObject]="liveObject" [dataNested]="dataNested" [data]="data"></app-sub-sub-live>
-    <app-sub-sub-live2 [liveObject]="liveObject" [dataNested]="dataNested" [data]="data"></app-sub-sub-live2>
+    <button (click)="changeNested()">Change nested</button>
+    <button (click)="eventChild.emit()">Emit value</button>
+    <div>liveObject: {{data2.prop}}</div>
+    <div>prop: {{data.prop}}</div>
+    <div>user : {{user?.firstName}}</div>
+    <div>firstName: {{firstName}}</div>
+    <app-sub-sub-live [data2]="data2" [dataNested]="dataNested" [data]="data"></app-sub-sub-live>
+    <app-sub-sub-live2 [data2]="data2" [dataNested]="dataNested" [data]="data"></app-sub-sub-live2>
 </div>
