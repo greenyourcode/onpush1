@@ -10,7 +10,9 @@ export class SubLiveComponent implements OnChanges, OnInit {
   @Input() data2: any;
   @Input() data: any;
   @Input() user: any;
+  @Input() userObs: Observable<any>;
   @Input() firstName: any;
+  @Input() firstName2: any;
   @Output() eventChild = new EventEmitter();
 
   public dataNested = {
@@ -27,7 +29,7 @@ export class SubLiveComponent implements OnChanges, OnInit {
   }
 
   ngOnChanges() {
-    console.log('Block A change');
+    console.log('Sub Live change');
   }
 
 }

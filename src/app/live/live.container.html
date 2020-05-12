@@ -1,13 +1,19 @@
 <div style="border:1px solid;" class="container">
     <h2>live container!</h2>
-    <button (click)="changeValue()">Change Value</button>
-    <button (click)="changeObject()">Change Object</button>
+    <button (click)="changeData2Object()">Change Data2 Value</button>
+    <button (click)="changeDataObject()">Change Data Object</button>
     <button (click)="changeWithObservable()">Change with observable</button>
+    <div>data : {{data.prop}}</div>
     <div>data2 : {{data2.prop}}</div>
-    <div>
-        user parent : {{firstName}}
-    </div>
-    <app-sub-live [firstName]="firstName" (eventChild)="onEventChild($event)" [data2]="data2" [data]="data">
+    <div>firstname : {{firstName}}</div>
+    <app-sub-live 
+    [firstName]="firstName" 
+    [user]="userService.user$ |async" 
+    [userObs]="userService.user$" 
+    [firstName2]="(userService.user$ |async)?.firstName" 
+    (eventChild)="onEventChild($event)" 
+    [data2]="data2" 
+    [data]="data">
     </app-sub-live>
     <app-sub-live2 [data2]="data2" [data]="data"></app-sub-live2>
 </div>

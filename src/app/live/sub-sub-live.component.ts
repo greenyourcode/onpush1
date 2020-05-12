@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, OnChanges } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sub-sub-live',
@@ -8,15 +9,18 @@ import { Component, OnInit, Input, ChangeDetectionStrategy, OnChanges } from '@a
 export class SubSubLiveComponent implements OnChanges, OnInit {
   @Input() data2: any;
   @Input() data: any;
+  @Input() userObs: Observable<any>;
   @Input() dataNested: any;
 
   constructor() { }
 
   ngOnInit() {
+    this.userObs.subscribe((u) => {
+      console.log(u);
+    });
   }
 
   ngOnChanges() {
-    console.log('Block A change');
+    console.log('SubSub Live change');
   }
-
 }

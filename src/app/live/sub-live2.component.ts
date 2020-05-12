@@ -15,7 +15,7 @@ export class SubLive2Component implements OnChanges, OnInit {
   }
 
   ngOnChanges() {
-    console.log('Block B change');
+    console.log('Sub Live2 change');
   }
 
 }

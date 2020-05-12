@@ -2,10 +2,13 @@
     <p><u>sub-live content</u></p>
     <button (click)="changeNested()">Change nested</button>
     <button (click)="eventChild.emit()">Emit value</button>
-    <div>liveObject: {{data2.prop}}</div>
-    <div>prop: {{data.prop}}</div>
+    <div>data prop: {{data.prop}}</div>
+    <div>data2 prop: {{data2.prop}}</div>
     <div>user : {{user?.firstName}}</div>
+    <div>userObs : {{(userObs |async)?.firstName}}</div>
     <div>firstName: {{firstName}}</div>
-    <app-sub-sub-live [data2]="data2" [dataNested]="dataNested" [data]="data"></app-sub-sub-live>
+    <div>user firstname: {{user.firstname}}</div>
+    <div>firstName2: {{firstName2}}</div>
+    <app-sub-sub-live [data2]="data2" [userObs]="userObs"  [dataNested]="dataNested" [data]="data"></app-sub-sub-live>
     <app-sub-sub-live2 [data2]="data2" [dataNested]="dataNested" [data]="data"></app-sub-sub-live2>
 </div>

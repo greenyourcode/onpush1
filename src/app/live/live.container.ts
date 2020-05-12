@@ -13,10 +13,10 @@ export class LiveContainer implements OnInit {
   data2: any = {
     prop: 'bottom'
   };
-  firstName: any;
+  firstName = 'jean';
 
   constructor(
-    private userService: UserService,
+    public userService: UserService,
     private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
@@ -30,12 +30,12 @@ export class LiveContainer implements OnInit {
     this.data2.prop = 'top';
   }
 
-  changeValue() {
-    this.data2.prop = 'top';
+  changeDataObject() {
+    this.data = { prop: 'top' };
   }
 
-  changeObject() {
-    this.data = { prop: 'top' };
+  changeData2Object() {
+    this.data2.prop = 'top';
   }
 
   changeWithObservable() {
